@@ -17,11 +17,21 @@ function contact(event){
     ).then(() => {
         loading.classList.remove("modal__overlay--visible");
         success.classList += " modal__overlay--visible";
-   }).catch(() => {
+   })
+   .catch(() => {
     loading.classList.remove("modal__overlay--visible");
     alert(
-        "The meial service is temporarily unavailable. Please contact me directly on email@email.com"
+        "The emial service is temporarily unavailable. Please contact me directly on email@email.com"
     )
    })
+}
 
+let isModalOpen = false;
+function toggleModal(){
+    if (isModalOpen){
+        isModalOpen = false;
+        return document.body.classList.remove("modal--open")
+    }
+    isModalOpen = true;
+    document.body.classList += " modal--open";
 }
